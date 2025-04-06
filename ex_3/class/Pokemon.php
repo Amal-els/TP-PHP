@@ -1,4 +1,6 @@
 <?php
+require_once "autoloader.php";
+require_once "../view/rounds.php";
 class Pokemon {
     private string $name;
     private string $url;
@@ -22,8 +24,20 @@ public function __construct(string $nom = "",string $url="",int $hp=0,AttackPoke
     public function getHp():int{
         return $this->hp;
     }
-    public function getAttackPokemon():AttackPokemon{
-        return $this->getAttackPokemon;
+    public function getAttackPokemon():attackPokemon{
+        return $this->attackPokemon;
+    }
+    public function getCard() {
+        return "
+            <div class='col-md-5 text-center p-3'>
+                <div class='card shadow'>
+                    <img src='{$this->getUrl()}' class='card-img-top' alt='{$this->getName()}'>
+                    <div class='card-body'>
+                       
+                    </div>
+                </div>
+            </div>
+        ";
     }
     //setters
     public function setName(string $name){
@@ -91,3 +105,5 @@ public function __construct(string $nom = "",string $url="",int $hp=0,AttackPoke
     }
 
 }
+$charizard = new PokemonFeu("Dracaufeu", "../image/Feu.png", 100, new AttackPokemon(10, 20, 2, 30));
+$blastoise = new PokemonEau("Tortank", "../image/Eau.png", 120, new AttackPokemon(8, 18, 2, 40));
