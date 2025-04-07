@@ -1,6 +1,6 @@
 <?php 
 require_once "etudiant.php";
-require_once "session.php";
+require_once "nbVisites.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -13,15 +13,17 @@ require_once "session.php";
 <body class="bg-light">
 
 <div class="container mt-4">
+<?php gererVisites(); ?>
     <h1 class="text-center">Résultats des Étudiants</h1>
-
-    <?php SessionManager::gererVisites(); ?>
 
     <div class="row justify-content-center">
         <?php foreach ($etudiants as $etudiant): ?>
             <?= $etudiant->afficherResultats(); ?>
         <?php endforeach; ?>
     </div>
+    <form action="resetSession.php" method="POST">
+        <button type="submit" name="reset_session" class = "btn btn-dark" value="1" style = "margin:2% 40%">Réinitialiser la session</button>
+    </form>
 </div>
 
 </body>
