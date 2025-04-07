@@ -1,6 +1,6 @@
 <?php
 include 'nbVisites.php';
 reinitialiserSession();
-header('Location: Admis.php'); 
+header('Location: admis.php'); 
 exit();
 ?>
