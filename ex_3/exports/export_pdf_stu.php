@@ -2,7 +2,7 @@
 require_once "../classes/Database.php";
 require_once "../vendor/setasign/fpdf/fpdf.php"; 
 
-$pdo = Database::connect();
+$pdo = Database::getInstance();
 $stmt = $pdo->query("SELECT etudiant.*, section.designation 
                      FROM etudiant 
                      LEFT JOIN section ON etudiant.section_id = section.id");
@@ -11,7 +11,7 @@ $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial', 'B', 12);
 
-$pdf->Cell(190, 10, 'Liste des étudiants', 1, 1, 'C');
+$pdf->Cell(190, 10, 'Liste des Etudiants', 1, 1, 'C');
 $pdf->Ln(10);
 
 $pdf->SetFont('Arial', 'B', 10);

@@ -44,6 +44,7 @@
             object-fit: cover;
         }
     </style>
+    <script src="../fragments/copy.js"></script>
 </head>
 
 <body>

@@ -3,7 +3,7 @@ require_once "../vendor/autoload.php";
 require_once "../classes/Database.php";
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-$pdo = Database::connect();
+$pdo = Database::getInstance();
 $stmt = $pdo->query("SELECT etudiant.*, section.designation 
                      FROM etudiant 
                      LEFT JOIN section ON etudiant.section_id = section.id");

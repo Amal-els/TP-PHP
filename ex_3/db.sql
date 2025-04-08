@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `etudiant` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT ,
   `name` varchar(20) NOT NULL,
   `birthday` date NOT NULL,
   `image` varchar(225) NOT NULL,
@@ -51,7 +51,7 @@ INSERT INTO `etudiant` (`id`, `name`, `birthday`, `image`, `section_id`) VALUES
 --
 
 CREATE TABLE `section` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `designation` varchar(225) NOT NULL,
   `description` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -91,7 +91,7 @@ INSERT INTO `student` (`id`, `name`, `date_de_naissance`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
   `email` varchar(225) NOT NULL,
   `role` varchar(225) NOT NULL
@@ -148,13 +148,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `etudiant`
 --
 ALTER TABLE `etudiant`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
+  MODIFY `id` int  NOT NULL AUTO_INCREMENT AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int  NOT NULL AUTO_INCREMENT AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

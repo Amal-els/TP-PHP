@@ -1,21 +1,26 @@
 <?php
 class Database {
-    private static $host = "localhost";
-    private static $dbname = "db";
-    private static $username = "root";
-    private static $password = "";
-    private static $pdo = null;
+    private static $_host = "localhost";
+    private static $_dbname = "db";
+    private static $_username = "root";
+    private static $_password = "AmAlEL20**SAmysql";
+    private static $_pdo = null;
 
-    public static function connect() {
-        if (self::$pdo == null) {
-            try {
-                self::$pdo = new PDO("mysql:host=" . self::$host . ";dbname=" . self::$dbname . ";charset=utf8", self::$username, self::$password);
-                self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            } catch (PDOException $e) {
-                die("❌ Connection failed: " . $e->getMessage());
-            }
+    private function __construct() {
+        try {
+            self::$_pdo = new PDO("mysql:host=" . self::$_host . ":3306". ";dbname=" . self::$_dbname . ";charset=utf8", self::$_username, self::$_password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8'));
+        } catch (PDOException $e) {
+            die("❌ Connection failed: " . $e->getMessage());
         }
+    }
+    public static function getInstance(): ?PDO{
+            if (!self::$_pdo) {
+                new Database();
+            }
+            return (self::$_pdo);
+        
         return self::$pdo;
     }
 }
+
 ?>
