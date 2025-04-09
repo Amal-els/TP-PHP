@@ -1,5 +1,5 @@
 <?php 
-require_once "etudiant.php";
+require_once "class/Etudiant.php";
 require_once "nbVisites.php";
 ?>
 <!DOCTYPE html>

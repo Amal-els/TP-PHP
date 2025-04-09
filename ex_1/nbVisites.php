@@ -1,5 +1,5 @@
 <?php
-include 'Session.php';
+include 'class/Session.php';
 $s = new Session();
 function gererVisites() {
     global $s;
