@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once '../classes/autoloader.php';
+$pageTitle = "Détails sections";
 if (isset($_GET['id'])) {
     $etudiants = Section::getStudents($_GET['id']); 
     include_once '../fragments/tableEtudiants.php';
