@@ -91,5 +91,11 @@ class Student {
         $stmt = $bd->prepare("DELETE FROM etudiant WHERE id = :id");
         $stmt->execute(['id' => $id]);
     }
+    public static function getStudentImageById($id){
+        $bd = Database::getInstance();
+        $query = "SELECT image FROM etudiant where id=$id;";
+        $res = $bd->query($query);
+        return $res->fetch(PDO::FETCH_OBJ);
+    }
 }
 ?>

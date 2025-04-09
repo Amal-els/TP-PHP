@@ -18,7 +18,7 @@ function tableauEtudiant($students){
                 <tr>
                     <td><?= htmlspecialchars($student['id']); ?></td>
                     <td>
-                    <img src="../photos/<?= !empty($student['image']) ? htmlspecialchars($student['image']) : '../photos/default.jpg'; ?>" 
+                    <img src="<?= !empty($student['image']) ? htmlspecialchars($student['image']) : '../photos/default.jpg'; ?>" 
                     alt="Photo de <?= htmlspecialchars($student['name'] ?? 'Inconnu'); ?>" 
                     style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"
                     onerror="this.onerror=null; this.src='../photos/default.jpg';">
